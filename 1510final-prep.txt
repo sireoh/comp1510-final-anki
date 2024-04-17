@@ -1,0 +1,109 @@
+#---------------------------------------------------------------------------
+#------------------------- Chapter 1: Computer Systems --------------------
+#---------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------
+#------------------------- Chapter 1: Computer Systems --------------------
+#---------------------------------------------------------------------------
+
+
+#---------------------------------------------------------------------------
+#------------------------- Chapter 8: Arrays -------------------------------
+#---------------------------------------------------------------------------
+how do you create software?
+
+Establish the requirements
+Create a design
+Implement the code
+Testing the implementation
+
+what is Binary Search?
+
+It compares the middle element with remaining viable candidates. It eliminates half the remaining data. It stops when the target is found or the data is exhausted.
+
+what is Linear Search?
+
+Begins at one end, and examines each element in turn. Either the element is found and it stops, or it encounters the end.
+
+What are the two types of searching in arrays?
+
+Linear and Binary
+
+What is big O notation?
+
+its math notation used to describe the performance/complexity of an algorithm in terms of its input size
+O stands for "order of"
+Constant Time: O
+Logarithmic Time: O(log[N])
+Linear Time: O(N)
+Linearithmic Time: O(N log[N])
+Quadratic Time: O(N^2)
+Exponential Time: O(2^N)
+
+compare Selection and Insertion sorting
+
+both algorithms are similar in efficiency
+they both have outer and inner loops that scan all the elements
+inner loops that compare the values in the outer loop with all the values in the list
+n^2 comparasons are made to sort a list with size n
+
+initiate a two-dimentional array called table that has dimensions of 12 and 50
+
+int[][] table = new int[12][50];
+
+initiate a variable parameter list called "list", that stores different integers in a function called average that returns double value.
+
+public double averate(int ... list) {}
+
+main String(args []), how do you pass pennsylvania, texas and arizona into a StateEval.java file in the command line?
+
+java StateEval pennsylvania texas arizona
+
+int[] scores = {5,10,15,20};
+
+what does a for loop for these values look like? show both types.
+
+// using a for each loop
+for (int num : scores) {
+ System.out.println(num);
+}
+
+// using a for loop
+for (int i = 0; i < scores.length; i++) {
+ System.out.println(scores[i]);
+}
+
+insertion sorting, give output:
+3 9 6 1 2
+
+3 9 6 1 2 (given)
+
+(3) 9 6 1 2 //3->null sorted.
+3 9 6 1 2
+
+3 (9) 6 1 2 //9->3 sorted.
+3 9 6 1 2
+
+3 9 (6) 1 2 //6->9 not sorted. move 9->. insert 6.
+3 6 9 1 2
+
+3 6 9 (1) 2 //1->9 not sorted. move 3,6,9-> insert 1. (while loop)
+1 3 6 9 2
+
+1 3 6 9 (2) //2->9 not sorted. move 3,6,9-> insert 2. (while loop)
+1 2 3 6 9
+
+
+selection sorting, give output:
+3 9 6 1 2
+
+3 9 6 1 2 (given)
+
+(3) 9 6 (1) 2 //scan from left to right, 1 is smallest. 3 and 1 swap places]
+1 9 6 3 2 
+
+1 (9) 6 3 (2) //scan from left to right, 2 is smallest. 9 and 2 swap places]
+1 2 6 3 9
+
+1 2 (6) (3) 9 //scan from left to right, 3 is smallest. 6 and 3 swap places]
+1 2 3 6 9
