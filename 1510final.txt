@@ -1,0 +1,111 @@
+#separator:tab
+#html:true
+#deck column:1
+ch.08	selection sorting, give output:<br>3 9 6 1 2	3 9 6 1 2 (given)<br><br>(3) 9 6 (1) 2 //scan from left to right, 1 is smallest. 3 and 1 swap places]<br>1 9 6 3 2&nbsp;<br><br>1 (9) 6 3 (2) //scan from left to right, 2 is smallest. 9 and 2 swap places]<br>1 2 6 3 9<br><br>1 2 (6) (3) 9 //scan from left to right, 3 is smallest. 6 and 3 swap places]<br>1 2 3 6 9
+ch.08	insertion sorting, give output:<br>3 9 6 1 2	3 9 6 1 2 (given)<br><br>(3) 9 6 1 2 //3-&gt;null sorted.<br>3 9 6 1 2<br><br>3 (9) 6 1 2 //9-&gt;3 sorted.<br>3 9 6 1 2<br><br>3 9 (6) 1 2 //6-&gt;9 not sorted. move 9-&gt;. insert 6.<br>3 6 9 1 2<br><br>3 6 9 (1) 2 //1-&gt;9 not sorted. move 3,6,9-&gt; insert 1. (while loop)<br>1 3 6 9 2<br><br>1 3 6 9 (2) //2-&gt;9 not sorted. move 3,6,9-&gt; insert 2. (while loop)<br>1 2 3 6 9
+ch.08	declare an array for scores with 10 values max	int[] scores = new int[10]
+ch.08	int[] scores = {5,10,15,20};<br><br>what does a for loop for these values look like? show both types.	// using a for each loop<br>for (int num : scores) {<br>&nbsp;System.out.println(num);<br>}<br><br>// using a for loop<br>for (int i = 0; i &lt; scores.length; i++) {<br>&nbsp;System.out.println(scores[i]);<br>}
+ch.08	initiate an array list that holds 5 Car objects in an array called cars.	Car[] cars = new Car[5];
+ch.08	main String(args []), how do you pass pennsylvania, texas and arizona into a StateEval.java file in the command line?	java StateEval pennsylvania texas arizona
+ch.08	"initiate a variable parameter list called ""list"", that stores different integers in a function called average that returns double value."	public double average(int ... list) {}
+ch.08	initiate a two-dimentional array called table that has dimensions of 12 and 50	int[][] table = new int[12][50];
+ch.08	compare Selection and Insertion sorting	<ul><li>both algorithms are similar in efficiency</li><li>they both have outer and inner loops that scan all the elements</li><li>inner loops that compare the values in the outer loop with all the values in the list</li><li>n^2 comparasons are made to sort a list with size n</li></ul>
+ch.08	What is big O notation?	"<ul><li>its math notation used to describe the performance/complexity of an algorithm in terms of its input size</li><li>O stands for ""order of""</li><li>Constant Time: O</li><li>Logarithmic Time: O(log[N])</li><li>Linear Time: O(N)</li><li>Linearithmic Time: O(N log[N])</li><li>Quadratic Time: O(N^2)</li><li>Exponential Time: O(2^N)</li></ul>"
+ch.08	What are the two types of searching in arrays?	Linear and Binary
+ch.08	what is Linear Search?	Begins at one end, and examines each element in turn. Either the element is found and it stops, or it encounters the end.
+ch.08	what is Binary Search?	It compares the middle element with remaining viable candidates. It eliminates half the remaining data. It stops when the target is found or the data is exhausted.
+ch.07	How do you create software?	<ol><li>Establish the requirements</li><li>Create a design</li><li>Implement the code</li><li>Testing the implementation</li></ol>
+ch.07	Explain Design	<ul><li>Specifies how a program will accomplish its requirements</li><li>Broken down into manageable pieces, and what each piece will do</li><li>In Object-Oriented design, determines what classes/objects are needed and how they will interact</li></ul>
+ch.07	Explain Implementation	<ul><li>Process of translating design into source code</li><li>All important decisions are made in Requirements and Design stages</li><li>Focuses on coding details, style guidelines and documentation</li></ul>
+ch.07	Explain Requirements	<ul><li>Specifies that tasks a program must accomplish</li><li>What to do, not how to do it</li><li>Careful attention to the requirements can save significant time and expense in the overall project</li></ul>
+ch.07	Explain Testing	<ul><li>Ensures the program will solve the intended problem under all constraints of the requirement</li><li>Thoroughly tested, with goal of finding errors</li><li>Debugging is process of finding problems and fixing it</li></ul>
+ch.07	Error signaling with exceptions	"throw new IllegalArgumentException(""error message"");"
+ch.07	Show me an example of aliases using a Car object	"class Car {
+<br>&nbsp;&nbsp;&nbsp; private String brand; //formal parameter
+<br> <br>&nbsp;&nbsp;&nbsp; public Car(String brand) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.brand = brand;
+<br>&nbsp;&nbsp;&nbsp; }
+<br> <br>&nbsp;&nbsp;&nbsp; public String getBrand() {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return brand;
+<br>&nbsp;&nbsp;&nbsp; }
+<br> <br>&nbsp;&nbsp;&nbsp; public void setBrand(String brand) { //actual parameter
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.brand = brand;
+<br>&nbsp;&nbsp;&nbsp; }
+<br>}"
+ch.07	"Show me an example of how "".this"" is used for an Account constructor with String name, long acctNumber, and double balance."	"public Account(String name, long acctNumber, double balance) {
+<br>&nbsp;&nbsp;&nbsp; this.name = name;
+<br>&nbsp;&nbsp;&nbsp; this.acctNumber = acctNumber;
+<br>&nbsp;&nbsp;&nbsp; this.balance = balance;
+<br>}"
+ch.07	Static Class Members	<ul><li>can be invoked through it's class name</li><li>Cars.getBrand() uses the car class to get its formal parameter variables</li><li>Static methods associates methods or variables with the class</li><li>Visibility modifiers come first. eg. main method is static, but the Java interpreter invokes it without having to create an object</li><li>Static methods can reference static variables and local variables</li></ul>
+ch.07	Static Variables	<ul><li>private static float price;</li><li>all objects instantiated from a class share its static variables</li></ul>
+ch.07	Static Methods	"public class Helper {
+<br>&nbsp;&nbsp;&nbsp; public static int cube(int num) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return num * num * num;
+<br>&nbsp;&nbsp;&nbsp; }
+<br>}
+<br> <br>Because it is declared as static, the method can only be invoked through the class name.
+<br> <br>value = Helper.cube(4);"
+ch.07	Interfaces	<ul><li>When a class implements an interface, it gains access to all its constants</li><li>Public by default</li><li>After implementing an interface eg. Comparable you can use the methods sort() from that object class as long as you declare the compareTo method.</li></ul>
+ch.07	Show me how you implement a single interface Doable, and how to implement many ManyThings.	"//Single Interface
+public class CanDo implements Doable {
+	public void doThis() {
+		// whatever
+	}
+	public void doThat() {
+		// whatever
+	}
+}
+
+//Many Interfaces
+public class ManyThings implements interface1, interface2 {
+	// all methods of both interfaces
+}"
+ch.07	Enumerated Types	enum Season {winter, spring, summer, fall}<br><br>Season time; //Can only use values from the declared enum<br><br>time = Season.fall;<br><br><ul><li>Contains a static method called values</li></ul>
+ch.07	Method Decomposition	<ul><li>Method should be small, so it can be understood as a single entity</li><li>Large methods should be decomposed into smaller methods for clarity</li><li>Primary objective is too complicated for one method to accomplish</li><li>Look for natural ways to decompose</li></ul>
+ch.07	Method Overloading	<ul><li>The process of giving a single method multiple definitions in a class</li><li>It relys on the signature, which should be unique</li><li>Signatures includes the number, type and order of parameters</li></ul>
+ch.07	Example of Overloading for the tryMe class	float tryMe(int x) {<br>&nbsp;&nbsp;&nbsp; return x + .375;<br>}<br><br>float tryMe(int x, float y) {<br>&nbsp;&nbsp;&nbsp; return x*y;<br>}
+ch.06	Switch Statement	"<ul><li>Has ""cases""</li><li>Each case contains a value, which execute if the value matches</li><li>Goes from the first case and goes down</li></ul>"
+ch.06	Switch Statement Example	switch ( expression )<br>{<br>&nbsp;&nbsp;&nbsp; case value1 :<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement-list1<br>&nbsp;&nbsp;&nbsp; case value2 :<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement-list2<br>&nbsp;&nbsp;&nbsp; case value3 :<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement-list3<br>&nbsp;&nbsp;&nbsp; case ...<br>}
+ch.06	do Statement	<ul><li>Runs once initially, and then the condition is evaluated</li><li>Runs repeatedly until the condition becomes false</li></ul>
+ch.06	do Statement Example	do {<br>&nbsp;&nbsp;&nbsp; statement-list;<br>} while (condition);
+ch.06	Conditional Operator Example	condition ? expression1 : expression 2;<br><br>larger = ((num1 &gt; num2) ? valA : valB);
+ch.06	Conditional Operator	<ul><li>If the condition is true, expression1 is evaluated</li><li>If false, expression2 is evaluated</li><li>The value of the conditional operator becomes the value of the selected expression</li><li>Similar to an if-else statement</li></ul>
+ch.06	for statement	for (initialization; condition; increment) {<br>&nbsp;&nbsp;&nbsp;statement;<br>}<br><br><ul><li>Similar to a while loop structure, but it does its initialization locally in the parameter, as well as its incrementing</li><li>Well suited for executing statements a specific number of times determined in advance.</li></ul><div>Example:</div><div><br></div><div>for (int count=1; count &lt;= 5; count++) {<br>&nbsp;&nbsp;&nbsp; System.out.println(count);<br>}<br></div>
+ch.06	For-each loops	<ul><li>variant of the for loop</li><li>simplifies the repetitive processing of items in an iterator</li></ul><div>for (Book myBook : bookList) {<br>&nbsp;&nbsp;&nbsp; System.out.println(myBook);<br>}<br></div>
+ch.01	Syntax	<ul><li>How we can put togetherr words, reserved words and identifiers to make a valid program</li><li>A program that is syntactically correct is not necessarily logically(semantically) correct</li></ul><br>
+ch.01	Semantics	<ul><li>Defines what that statement means (purpose or role in a program)</li><li>A program will always do what we tell it to do, not what we <u>meant</u> to tell it to do</li></ul>
+ch.01	What are the three types of errors	<ol><li>Compile-time, aka syntax errors</li><li>Run-time</li><li>Logical errors</li></ol>
+ch.01	Explain compile-time errors	<ul><li>&nbsp; Syntax errors like missing a ;</li><li>The executable version is not created</li></ul>
+ch.01	Explain Run-time Errors	<ul><li>Happens during program execution</li><li>Dividing by zero makes the program terminiate abnormally</li></ul>
+ch.01	Explain Logical errors	<ul><li>It runs, but not the desired output</li></ul>
+ch.01	Once an object no longer has valid references to it, its memory will?	Be automatically returned to the system via auto garbage collection
+ch.03	Can you can the value of a String class?	No, because once a String object is created it is immutable and cannot be changed
+ch.03	Can you use a class using its name without importing it?	Yes
+ch.03	What is a wrapper class?	<ol><li>Allows you to embed once piece of primitive data</li><li>Methods for extracting data from an Object</li><li>Useful for constructors/methods that accept only Objects</li><li>Wrapping the primitive data within an Object, the functionality of the method may be accessed</li></ol>
+ch.04	What the difference between a mutator and accessor?	Accessor returns a value, while a mutator returns void.
+ch.04	What the purpose of a mutator?	To modify the value of an instance variable
+ch.06	Whats the result?<br><br>result = 0;<br>count1 = 0;<br>while (count1 &lt; 10) {<br>&nbsp;&nbsp;&nbsp; count2 = 10;<br>&nbsp;&nbsp;&nbsp; while (count2 &gt; 0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; result++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; count2--;<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; count1++;<br>}	100
+ch.06	What is the output?<br><br>result = 0;<br>count1 = 0;<br>while (count1 &lt; 10) {<br>&nbsp;&nbsp;&nbsp; count2 = 10;<br>&nbsp;&nbsp;&nbsp; while (count2 &gt; 0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; result++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; count2--;<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; count1++;<br>}	100
+ch.06	What is the output, of score?<br><br>char grade = 'B';<br>int score = 0;<br>switch (grade) {<br>&nbsp;&nbsp;&nbsp; case 'F':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score += 50;<br>&nbsp;&nbsp;&nbsp; case 'D':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score += 20;<br>&nbsp;&nbsp;&nbsp; case 'B':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score += 20;<br>&nbsp;&nbsp;&nbsp; case 'A':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score += 10;<br>&nbsp;&nbsp;&nbsp; default:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score += 10;<br>}	40
+ch.06	Which one is an interface? Iterable or Iterator	They both are
+ch.02	What is a Java Variable?	Data value that is stored in memory that can change both its value and its type during program execution
+ch.05	What does Run do, when you step through code?	Starts executing the program from the current point until a breakpoint is reached.
+ch.05	What does Step Into do, when you step through code?	If the next instruction is a function call, step into it. If its not a function, just execute it.
+ch.05	What does Step Over do, when you step through code?	If its a function call, step OVER it, if its not a function execute it.
+ch.05	What does Step Out of do, when you step through code?	Steps out of a current function, and executes it until the current function stops, and stops after caller line.
+ch.04	Encapsulation	"<ul><li>Two views of an object, internal and external</li><li>An object is an encapsulated entity, providing a set of services</li><li>These services define the interface of the object</li><li>One object called the client may use another object for its services</li><li>Any changes should be made through ""that"" object's methods</li><li>Please make it difficult to access a clients object's variables directly</li><li>An encapsulated object is considered a ""black box""</li><li>Has to invoke methods to manage instance data</li></ul>"
+ch.04	In Java, what is used to create an instance of a class?	new
+ch.01	An unusual aspect of Java that allows code compiled to be executed on a different hardware platform is?	bytecode
+ch.02	Whats an escape sequence?	"\<br><br>Examples Include:<br>Escape Sequence<br>\b backspace<br>\t tab<br>\n newline<br>\"" double quote<br>\' single quote<br>\\ backslash<br><br><br><br><br>"
+ch.01	RAM	<ul><li>is volatile</li></ul>
+ch.01	What type of error do you get if you use a variable before its initialized?	Run-time error
+ch.02	Whats the output?<br><br>double z = 5 / 10;	0.0
+ch.03	What is an alias?	When two different reference variables refer to the same physical object
+ch.03	The Random class returns a value between what numbers?	0 and 1
+ch.03	What does setSeed() do?	Allows to restart the pseudo random number sequence
+ch.05	How can you make an ArrayList efficiency deteriorate?	Remove and add elements towards the front portion of the array.<br><br>ArrayList is a dynamic array meaning it can grow and shrink in size. If you add/remove in the front all the elements have to be shifted to accomodate the change.<br><br>You have to insert/remove from the end of the ArrayList to make it ok
+ch.07	Can you have multiple inheritances?	No, but you can have multiple Interfaces
+ch.07	What are the differences between Inheritance and Interface?	Inheritance<br><ul><li>Where SUB-CLASSES reuse fields from a superclass</li><li>Subclasses typically can only inherit one superclass</li></ul><div>Interface</div><div><ul><li>Can only contain abstract methods, default methods, static and constants</li><li>You implement this in the class, and classes can have multiple interfaces</li></ul></div>
+ch.04	For the questions below, consider a class called Building. This class consists of a number of floors (numberOfFloors) for the Building, a current floor for the elevator (current), a requested floor of a person waiting for the elevator (requestedFloor), and methods for constructing the building object, for moving the elevator one floor up, for moving the elevator one floor down, for requesting the elevator and for starting the elevator going. Assume that requestedFloor will be set to 0 if there are currently no requests being made (or the last request has already been fulfilled).<br><br>Write the constructor for this class.	public Building(int numFloors) {<br>&nbsp;&nbsp;&nbsp; numberOfFloors = numFloors;<br>&nbsp;&nbsp;&nbsp; current = 1;<br>&nbsp;&nbsp;&nbsp; requestedFloor = 0;<br>}
+ch.08	<br>Demonstrate how the following array is sorted using Insertion Sort. Show the array after each pass of the outer loop:<br><br>[16, 3, 12, 13, 8, 1, 18, 9]	16, 3, 12, 13, 8, 1, 18, 9 (initial)<br>3, 16, 12, 13, 8, 1, 18, 9 (pass 1)<br>3, 12, 16, 13, 8, 1, 18, 9 (pass 2)<br>3, 12, 13, 16, 8, 1, 18, 9 (pass 3)<br>3, 8, 12, 13, 16, 1, 18, 9 (pass 4)<br>1, 3, 8, 12, 13, 16, 18, 9 (pass 5)<br>1, 3, 8, 12, 13, 16, 18, 9 (pass 6)<br>1, 3, 8, 9, 12, 13, 16, 18 (pass 7)
